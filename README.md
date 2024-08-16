@@ -2,6 +2,12 @@
 
 This repository provides a complete guide and Terraform configuration for securely deploying and managing a LocalStack instance on AWS EC2. It includes step-by-step instructions to set up SSH access using a PEM file and automate interactions with LocalStack through GitHub Actions, ensuring secure and controlled access to your testing environment.
 
+### Motivation
+- **Spin-Up Time**: Running LocalStack directly in CI/CD pipelines can be time-consuming. By deploying LocalStack on an EC2 instance, we reduce the spin-up time significantly.
+- **Cost Considerations**: Running LocalStack on a private GITHUB or in CI environments can become expensive. Using Spot Instances on AWS EC2 helps manage costs effectively.
+- **Branch Testing**: This setup allows testing on feature branches before merging into the main branch, ensuring higher code quality and fewer integration issues.
+
+
 ## Features
 - Create an S3 bucket for Terraform state storage.
 - Enable versioning and server-side encryption on the S3 bucket.
